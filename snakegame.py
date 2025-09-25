@@ -1,6 +1,8 @@
 import turtle
 import time
 
+delay = 0.3
+
 # Set up the screen
 wn = turtle.Screen()
 wn.title("Snake Game")
@@ -8,6 +10,31 @@ wn.bgcolor("black")
 wn.setup(width=600, height=600)
 
 wn.tracer(0)  # Turns off the screen updates    
+
+# Snake head
+head = turtle.Turtle()
+head.speed(0)
+head.shape("square")
+head.color("white")
+head.penup()
+head.goto(0, 0)
+head.direction = "up"
+
+# Functions to control the snake
+def move():
+    if head.direction == "up":
+        y = head.ycor()
+        head.sety(y + 20)
+
+
+# Main game loop
+while True:
+    wn.update()
+
+    move()  # Function to move the snake
+
+
+    time.sleep(delay)
 
 
 wn.mainloop()
