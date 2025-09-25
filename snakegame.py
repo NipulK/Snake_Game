@@ -21,6 +21,18 @@ head.goto(0, 0)
 head.direction = "up"
 
 # Functions to control the snake
+def go_up():
+    if head.direction = "up"
+
+def go_down():
+    if head.direction = "down"
+
+def go_left():
+    if head.direction = "left"
+
+def go_right():
+    if head.direction = "right"
+
 def move():
     if head.direction == "up":
         y = head.ycor()
@@ -35,6 +47,13 @@ def move():
         x = head.xcor()
         head.setx(x + 20)
 
+
+# Keyboard bindings
+wn.listen() # Listen for keyboard input
+wn.onkeypress(go_up, "w")
+wn.onkeypress(go_down, "s")
+wn.onkeypress(go_left, "q")
+wn.onkeypress(go_right, "e")
 
 # Main game loop
 while True:
