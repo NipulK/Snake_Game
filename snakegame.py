@@ -1,7 +1,7 @@
 import turtle
 import time
 
-delay = 0.3
+delay = 0.1
 
 # Set up the screen
 wn = turtle.Screen()
