@@ -22,16 +22,16 @@ head.direction = "up"
 
 # Functions to control the snake
 def go_up():
-    if head.direction = "up"
+     head.direction = "up"
 
 def go_down():
-    if head.direction = "down"
+     head.direction = "down"
 
 def go_left():
-    if head.direction = "left"
+     head.direction = "left"
 
 def go_right():
-    if head.direction = "right"
+     head.direction = "right"
 
 def move():
     if head.direction == "up":
