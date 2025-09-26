@@ -96,6 +96,7 @@ while True:
             segment.goto(10000, 10000) # Move the segments off the screen
         segements.clear() # Clear the segments list
     
+
     # Check for head body segments
     if head.xcor() == new_segment.xcor() and head.ycor() == new_segment.ycor():
         time.sleep(1)
@@ -106,6 +107,7 @@ while True:
         for segment in segements:
             segment.goto(10000, 10000) # Move the segments off the screen
         segements.clear() # Clear the segments list
+
 
     # Move the end segments first in reverse order
     for index in range(len(segements)-1, 0, -1): # Start from the last segment to the first segment
