@@ -21,6 +21,7 @@ head.penup()
 head.goto(0, 0)
 head.direction = "up"
 
+
 # Snake food
 food = turtle.Turtle()
 food.speed(0)
@@ -84,6 +85,17 @@ while True:
         new_segment.penup()
         segements.append(new_segment) # Add the new segment to the list of segments
 
+    # Move the end segments first in reverse order
+    for index in range(len(segements)-1, 0, -1): # Start from the last segment to the first segment
+        x = segements[index-1].xcor() 
+        y = segements[index-1].ycor()
+        segements[index].goto(x, y) # Move the segment to the position of the previous segment
+
+    # Move segment 0 to where the head is
+    if len(segements) > 0: # If there is at least one segment
+        x = head.xcor() 
+        y = head.ycor()
+        segements[0].goto(x, y)
 
     move()  # Function to move the snake
 
