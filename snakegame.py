@@ -85,6 +85,17 @@ while True:
         new_segment.penup()
         segements.append(new_segment) # Add the new segment to the list of segments
 
+    # Check snake and the border
+    if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction = "stop"
+
+        # Hide the segments
+        for segment in segements:
+            segment.goto(10000, 10000) # Move the segments off the screen
+        segements.clear() # Clear the segments list
+
     # Move the end segments first in reverse order
     for index in range(len(segements)-1, 0, -1): # Start from the last segment to the first segment
         x = segements[index-1].xcor() 
