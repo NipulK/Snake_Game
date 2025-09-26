@@ -29,6 +29,8 @@ food.color("red")
 food.penup()
 food.goto(0, 100)
 
+segements = []
+
 # Functions to control the snake
 def go_up():
      head.direction = "up"
@@ -73,6 +75,15 @@ while True:
         x = random.randint(-290, 290) # Move the food to a random spot in X axis
         y = random.randint(-290, 290)# Move the food to a random spot in Y axis
         food.goto(x, y)
+
+        # Add a segment
+        new_segment = turtle.Turtle()
+        new_segment.speed(0)
+        new_segment.shape("square")
+        new_segment.color("grey")
+        new_segment.penup()
+        segements.append(new_segment) # Add the new segment to the list of segments
+
 
     move()  # Function to move the snake
 
