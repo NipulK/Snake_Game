@@ -1,5 +1,6 @@
-import turtle
-import time
+import turtle # To create graphics and handle user input
+import time # To control the speed of the game(to make the delay)
+import random # To generate random numbers
 
 delay = 0.1
 
@@ -66,6 +67,12 @@ wn.onkeypress(go_right, "e")
 # Main game loop
 while True:
     wn.update()
+
+    if head.distance(food) < 20:
+        # Move the food to a random spot
+        x = random.randint(-290, 290) # Move the food to a random spot in X axis
+        y = random.randint(-290, 290)# Move the food to a random spot in Y axis
+        food.goto(x, y)
 
     move()  # Function to move the snake
 
