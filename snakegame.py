@@ -110,9 +110,11 @@ while True:
         segements[0].goto(x, y)
 
 
-    # Check snake and the body
+    move()  # Function to move the snake
+
+        # Check snake and the body
     for segement in segements:
-        if segment.distance(head) < 20:
+        if segement.distance(head) < 20:
             time.sleep(1)
             head.goto(0,0)
             head.direction = "stop"
@@ -121,12 +123,9 @@ while True:
             for segment in segements:
                 segment.goto(10000, 10000) # Move the segments off the screen
                 
-            segements.clear() # Clear the segments list
- 
+            segements.clear() # Clear the segments list 
 
-    move()  # Function to move the snake
-
-
+            
     time.sleep(delay)
 
 
