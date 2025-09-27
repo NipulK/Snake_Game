@@ -96,6 +96,17 @@ while True:
             segment.goto(10000, 10000) # Move the segments off the screen
         segements.clear() # Clear the segments list
     
+    # Check snake and the body
+    if head.distance(segment) < 20:
+        # Move the food to a random spot
+        time.sleep(1)
+        head.goto(0,0)
+        head.direction = "stop"
+        # Move the food to a random spot
+        x = random.randint(-290, 290) # Move the food to a random spot in X axis
+        y = random.randint(-290, 290)# Move the food to a random spot in Y axis
+        head.goto(x, y)
+
 
 
     # Move the end segments first in reverse order
