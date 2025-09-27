@@ -95,19 +95,7 @@ while True:
         for segment in segements:
             segment.goto(10000, 10000) # Move the segments off the screen
         segements.clear() # Clear the segments list
-    
-    # Check snake and the body
-    if head.distance(segment) < 20:
-        # Move the food to a random spot
-        time.sleep(1)
-        head.goto(0,0)
-        head.direction = "stop"
-        # Move the food to a random spot
-        x = random.randint(-290, 290) # Move the food to a random spot in X axis
-        y = random.randint(-290, 290)# Move the food to a random spot in Y axis
-        head.goto(x, y)
-
-
+   
 
     # Move the end segments first in reverse order
     for index in range(len(segements)-1, 0, -1): # Start from the last segment to the first segment
@@ -120,6 +108,21 @@ while True:
         x = head.xcor() 
         y = head.ycor()
         segements[0].goto(x, y)
+
+
+    # Check snake and the body
+    for segement in segements:
+        if segment.distance(head) < 20:
+            time.sleep(1)
+            head.goto(0,0)
+            head.direction = "stop"
+
+            # Hide the segments
+            for segment in segements:
+                segment.goto(10000, 10000) # Move the segments off the screen
+                
+            segements.clear() # Clear the segments list
+ 
 
     move()  # Function to move the snake
 
