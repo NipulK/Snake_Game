@@ -32,6 +32,14 @@ food.goto(0, 100)
 
 segements = []
 
+#  points
+pen = turtle.Turtle()
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
+
 # Functions to control the snake
 def go_up():
      head.direction = "up"
@@ -125,7 +133,7 @@ while True:
                 
             segements.clear() # Clear the segments list 
 
-            
+
     time.sleep(delay)
 
 
