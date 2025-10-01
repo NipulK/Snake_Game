@@ -84,6 +84,14 @@ while True:
     wn.update()
 
     if head.distance(food) < 20:
+
+        # make the score
+        score += 1
+        if score > high_score:
+            high_score = score
+        pen.clear()
+        pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+
         # Move the food to a random spot
         x = random.randint(-290, 290) # Move the food to a random spot in X axis
         y = random.randint(-290, 290)# Move the food to a random spot in Y axis
@@ -137,6 +145,10 @@ while True:
                 
             segements.clear() # Clear the segments list 
 
+            # Reset the score
+            score = 0
+            pen.clear()
+            pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
     time.sleep(delay)
 
