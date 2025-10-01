@@ -2,7 +2,7 @@ import turtle # To create graphics and handle user input
 import time # To control the speed of the game(to make the delay)
 import random # To generate random numbers
 
-delay = 0.1
+delay = 0.01
 
 # Declare the score variable
 score = 0
@@ -92,6 +92,9 @@ while True:
         pen.clear()
         pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
+        delay -= 0.001
+        
+
         # Move the food to a random spot
         x = random.randint(-290, 290) # Move the food to a random spot in X axis
         y = random.randint(-290, 290)# Move the food to a random spot in Y axis
@@ -116,6 +119,13 @@ while True:
             segment.goto(10000, 10000) # Move the segments off the screen
         segements.clear() # Clear the segments list
    
+        # Reset the score
+        score = 0
+        pen.clear()
+        pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+
+        delay += 0.01
+
 
     # Move the end segments first in reverse order
     for index in range(len(segements)-1, 0, -1): # Start from the last segment to the first segment
@@ -149,6 +159,8 @@ while True:
             score = 0
             pen.clear()
             pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+
+            delay += 0.01
 
     time.sleep(delay)
 
