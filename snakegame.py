@@ -2,7 +2,7 @@ import turtle # To create graphics and handle user input
 import time # To control the speed of the game(to make the delay)
 import random # To generate random numbers
 
-delay = 0.01
+delay = 0.1
 
 # Declare the score variable
 score = 0
@@ -124,7 +124,7 @@ while True:
         pen.clear()
         pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
-        delay += 0.01
+        delay += 0.001
 
 
     # Move the end segments first in reverse order
@@ -160,7 +160,7 @@ while True:
             pen.clear()
             pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
-            delay += 0.01
+            delay += 0.001
 
     time.sleep(delay)
 
